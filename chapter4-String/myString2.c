@@ -98,19 +98,11 @@ int StrAssign(HString *T, char *chars)
    }
 
    /*打印出T的长度length*/
-   printf("T->length: %d\n",T->length);
+   printf("StrAssign得到的串的长度: %d\n",T->length);
 
    return 0;
 }
 
-
-// 2.StrLenth
-int StrLength(HString *T) {
-   // 返回T中元素的个数，称为串的长度
-   printf("串的长度为: %d\n",T->length);
-
-   return 0;
-}
 //3.PrintString(T)
 int PrintString(HString *T)
 {
@@ -122,14 +114,16 @@ int PrintString(HString *T)
    }else {
       printf("串的长度为: %d\n",T->length);
       while(i < T->length) {
-         //printf("%c",*T->ch++);
-         printf("Hello World");
+         //printf("%d",i);
+         printf("%c",T->ch++);
+         //printf("Hello World");
          ++i;
       }
+
       printf("\n");
       return 0;
    }
-   
+
    return 0;
 }
 
@@ -142,18 +136,49 @@ int InitString(HString *T)
     return 0;
 }
 
+//StrLength
+int StrLength(HString *T) {
+   printf("HString's length: %d\n",T->length);
+
+   return 0;
+}
+
+// StrCompare
+int StrCompare(HString S,HString T) {
+   // 定义局部变量
+   int i;
+   
+   for(i = 0;i < S.length && i < T.length;i++) {
+      // printf("差:n");
+     
+   if(S.ch[i] != T.ch[i]) {
+printf("差:n");
+         //printf("S->ch[i] - T->ch[i]: %d\n",S->ch[i] - T->ch[i]);
+      }
+
+   }
+   
+
+   //printf("S->length - T->length: %d\n",S->length - T->length);
+   
+}
 int main()
 {
     HString T,S;
 
-    char *test1 = "abcabcabcabcabc";
-    char *test2 = "hijkln";
+    char *test1 = "aaa";
+    char *test2 = "aaa";
 
     StrAssign(&T,test1);
+    StrAssign(&S,test2);
     //StrAssign(&S,test2);
 
     //StrLength(&T);
     PrintString(&T);
+    // StrLength
+    StrLength(&T);
+    // StrCompare
+    StrCompare(T,S);
 
     return 0;
 }
