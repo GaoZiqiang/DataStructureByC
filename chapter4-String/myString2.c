@@ -137,8 +137,8 @@ int InitString(HString *T)
 }
 
 //StrLength
-int StrLength(HString *T) {
-   printf("HString's length: %d\n",T->length);
+int StrLength(HString T) {
+   printf("HString's length: %d\n",T.length);
 
    return 0;
 }
@@ -151,8 +151,8 @@ int StrCompare(HString S,HString T) {
    for(i = 0;i < S.length && i < T.length;i++) {
       // printf("差:n");
      
-   if(S.ch[i] != T.ch[i]) {
-printf("差:n");
+      if(S.ch[i] != T.ch[i]) {
+         printf("差:n");
          //printf("S->ch[i] - T->ch[i]: %d\n",S->ch[i] - T->ch[i]);
       }
 
@@ -176,9 +176,9 @@ int main()
     //StrLength(&T);
     PrintString(&T);
     // StrLength
-    StrLength(&T);
+    StrLength(T);
     // StrCompare
-    StrCompare(T,S);
+    //StrCompare(T,S);
 
     return 0;
 }
