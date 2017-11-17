@@ -40,8 +40,7 @@ typedef struct {
 /*队列部分*/
 typedef int QElemType; // 队列类型   
 
-//单链队列－－队列的链式存储结构   
-
+/*单链队列－－队列的链式存储结构*/
 typedef struct QNode {
     QElemType data; //数据域  
     struct QNode *next; //指针域  
